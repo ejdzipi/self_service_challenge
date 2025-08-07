@@ -1,6 +1,6 @@
 # ESET - Self service specialist - challenge
 
-A React application built with Vite.js, TypeScript, and React 19. eveloper experience.
+A React application built with Vite.js, TypeScript, and React 19.
 
 ## Getting Started
 

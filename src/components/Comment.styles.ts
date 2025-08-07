@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import { theme } from '../theme';
+import type { Theme } from '@emotion/react';
 
-export const commentStyles = css`
+export const commentStyles = (theme: Theme) => css`
   background: ${theme.colors.background.tertiary};
   border: 1px solid ${theme.colors.border.light};
   border-radius: ${theme.borderRadius.md};
@@ -14,7 +14,7 @@ export const commentStyles = css`
   }
 `;
 
-export const commentContentStyles = css`
+export const commentContentStyles = (theme: Theme) => css`
   color: ${theme.colors.text.primary};
   font-size: ${theme.typography.fontSize.sm};
   line-height: ${theme.typography.lineHeight.relaxed};
@@ -23,7 +23,7 @@ export const commentContentStyles = css`
   word-wrap: break-word;
 `;
 
-export const commentTimestampStyles = css`
+export const commentTimestampStyles = (theme: Theme) => css`
   color: ${theme.colors.text.muted};
   font-size: ${theme.typography.fontSize.xs};
   font-weight: ${theme.typography.fontWeight.medium};
@@ -35,14 +35,14 @@ export const commentTimestampStyles = css`
   }
 `;
 
-export const commentActionsStyles = css`
+export const commentActionsStyles = (theme: Theme) => css`
   display: flex;
   gap: ${theme.spacing.sm};
   align-items: center;
   margin-bottom: ${theme.spacing.sm};
 `;
 
-export const actionButtonStyles = css`
+export const actionButtonStyles = (theme: Theme) => css`
   background: none;
   border: none;
   color: ${theme.colors.primary};
@@ -58,7 +58,7 @@ export const actionButtonStyles = css`
   }
 `;
 
-export const deleteCommentButtonStyles = css`
+export const deleteCommentButtonStyles = (theme: Theme) => css`
   position: absolute;
   top: ${theme.spacing.xs};
   right: ${theme.spacing.xs};
@@ -77,8 +77,8 @@ export const deleteCommentButtonStyles = css`
   }
 `;
 
-export const commentWithHoverStyles = css`
-  ${commentStyles}
+export const commentWithHoverStyles = (theme: Theme) => css`
+  ${commentStyles(theme)}
 
   &:hover {
     background: ${theme.colors.background.secondary};
@@ -89,7 +89,7 @@ export const commentWithHoverStyles = css`
   }
 `;
 
-export const replyInputStyles = css`
+export const replyInputStyles = (theme: Theme) => css`
   width: 100%;
   padding: ${theme.spacing.sm};
   border: 1px solid ${theme.colors.border.light};
@@ -113,7 +113,7 @@ export const replyInputStyles = css`
   }
 `;
 
-export const replyButtonStyles = css`
+export const replyButtonStyles = (theme: Theme) => css`
   background: ${theme.colors.primary};
   color: ${theme.colors.text.inverse};
   border: none;
@@ -133,14 +133,14 @@ export const replyButtonStyles = css`
   }
 `;
 
-export const repliesContainerStyles = css`
+export const repliesContainerStyles = (theme: Theme) => css`
   margin-left: ${theme.spacing.lg};
   border-left: 2px solid ${theme.colors.border.light};
   padding-left: ${theme.spacing.md};
   margin-top: ${theme.spacing.sm};
 `;
 
-export const replyStyles = css`
+export const replyStyles = (theme: Theme) => css`
   background: ${theme.colors.background.primary};
   border: 1px solid ${theme.colors.border.light};
   border-radius: ${theme.borderRadius.sm};
@@ -157,7 +157,7 @@ export const replyStyles = css`
   }
 `;
 
-export const replyContentStyles = css`
+export const replyContentStyles = (theme: Theme) => css`
   color: ${theme.colors.text.primary};
   font-size: ${theme.typography.fontSize.xs};
   line-height: ${theme.typography.lineHeight.normal};
@@ -166,7 +166,7 @@ export const replyContentStyles = css`
   word-wrap: break-word;
 `;
 
-export const replyTimestampStyles = css`
+export const replyTimestampStyles = (theme: Theme) => css`
   color: ${theme.colors.text.muted};
   font-size: ${theme.typography.fontSize.xs};
   font-weight: ${theme.typography.fontWeight.medium};
@@ -177,7 +177,7 @@ export const replyTimestampStyles = css`
   }
 `;
 
-export const deleteReplyButtonStyles = css`
+export const deleteReplyButtonStyles = (theme: Theme) => css`
   position: absolute;
   top: ${theme.spacing.xs};
   right: ${theme.spacing.xs};

@@ -1,17 +1,17 @@
 import { useState } from 'react';
+import { type Theme } from '@emotion/react';
 import { usePostStore } from '../store/postStore';
-import { theme } from '../theme';
 import type {
   Comment as CommentType,
   Reply as ReplyType,
 } from '../store/postStore';
 import {
-  commentWithHoverStyles,
-  deleteCommentButtonStyles,
   commentContentStyles,
   commentTimestampStyles,
   commentActionsStyles,
   actionButtonStyles,
+  deleteCommentButtonStyles,
+  commentWithHoverStyles,
   replyInputStyles,
   replyButtonStyles,
   repliesContainerStyles,
@@ -89,10 +89,10 @@ const Comment = ({ comment, postId }: CommentProps) => {
         </button>
         {comment.replies.length > 0 && (
           <span
-            css={{
+            css={(theme: Theme) => ({
               fontSize: theme.typography.fontSize.xs,
               color: theme.colors.text.muted,
-            }}
+            })}
           >
             {comment.replies.length} repl
             {comment.replies.length === 1 ? 'y' : 'ies'}

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
-import { theme } from '../theme';
+import type { Theme } from '@emotion/react';
 
-export const containerStyles = css`
+export const containerStyles = (theme: Theme) => css`
   background: ${theme.colors.background.primary};
   padding: ${theme.spacing.lg};
   border-radius: ${theme.borderRadius.lg};
@@ -18,7 +18,7 @@ export const containerStyles = css`
   }
 `;
 
-export const editorStyles = css`
+export const editorStyles = (theme: Theme) => css`
   margin-bottom: ${theme.spacing.md};
 
   .rsw-editor {
@@ -125,7 +125,7 @@ export const editorStyles = css`
   }
 `;
 
-export const buttonStyles = css`
+export const buttonStyles = (theme: Theme) => css`
   background: ${theme.colors.primary};
   color: ${theme.colors.text.inverse};
   border: none;

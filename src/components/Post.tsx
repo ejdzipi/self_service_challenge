@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { usePostStore } from '../store/postStore';
 import Comment from './Comment';
 import type { Post as PostType } from '../store/postStore';
-import { theme } from '../theme';
 import {
   postWithHoverStyles,
   deleteButtonStyles,
@@ -11,6 +10,7 @@ import {
   commentSectionStyles,
   commentsHeaderStyles,
   toggleCommentsButtonStyles,
+  commentInputWrapperStyles,
   commentInputStyles,
   commentButtonStyles,
 } from './Post.styles';
@@ -87,7 +87,7 @@ const Post = ({ post }: PostProps) => {
         </div>
 
         {showCommentInput && (
-          <div style={{ marginBottom: theme.spacing.md }}>
+          <div css={commentInputWrapperStyles}>
             <textarea
               css={commentInputStyles}
               placeholder="Write a comment... (Ctrl+Enter to submit)"

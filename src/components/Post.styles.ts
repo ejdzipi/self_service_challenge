@@ -1,5 +1,4 @@
-import { css, keyframes } from '@emotion/react';
-import { theme } from '../theme';
+import { css, keyframes, type Theme } from '@emotion/react';
 
 const slideInDown = keyframes`
   from {
@@ -12,7 +11,7 @@ const slideInDown = keyframes`
   }
 `;
 
-export const postStyles = css`
+export const postStyles = (theme: Theme) => css`
   background: ${theme.colors.background.primary};
   border: 1px solid ${theme.colors.border.light};
   border-radius: ${theme.borderRadius.lg};
@@ -33,7 +32,7 @@ export const postStyles = css`
   }
 `;
 
-export const contentStyles = css`
+export const contentStyles = (theme: Theme) => css`
   color: ${theme.colors.text.primary};
   font-size: ${theme.typography.fontSize.base};
   line-height: ${theme.typography.lineHeight.relaxed};
@@ -102,7 +101,7 @@ export const contentStyles = css`
   }
 `;
 
-export const timestampStyles = css`
+export const timestampStyles = (theme: Theme) => css`
   color: ${theme.colors.text.secondary};
   font-size: ${theme.typography.fontSize.sm};
   font-weight: ${theme.typography.fontWeight.medium};
@@ -114,7 +113,7 @@ export const timestampStyles = css`
   }
 `;
 
-export const deleteButtonStyles = css`
+export const deleteButtonStyles = (theme: Theme) => css`
   position: absolute;
   top: ${theme.spacing.md};
   right: ${theme.spacing.md};
@@ -134,8 +133,8 @@ export const deleteButtonStyles = css`
   }
 `;
 
-export const postWithHoverStyles = css`
-  ${postStyles}
+export const postWithHoverStyles = (theme: Theme) => css`
+  ${postStyles(theme)}
 
   &:hover {
     box-shadow: ${theme.shadows.md};
@@ -148,7 +147,11 @@ export const postWithHoverStyles = css`
   }
 `;
 
-export const commentInputStyles = css`
+export const commentInputWrapperStyles = (theme: Theme) => css`
+  margin-bottom: ${theme.spacing.md};
+`;
+
+export const commentInputStyles = (theme: Theme) => css`
   width: 100%;
   padding: ${theme.spacing.sm};
   border: 1px solid ${theme.colors.border.light};
@@ -172,7 +175,7 @@ export const commentInputStyles = css`
   }
 `;
 
-export const commentButtonStyles = css`
+export const commentButtonStyles = (theme: Theme) => css`
   background: ${theme.colors.primary};
   color: ${theme.colors.text.inverse};
   border: none;
@@ -192,13 +195,13 @@ export const commentButtonStyles = css`
   }
 `;
 
-export const commentSectionStyles = css`
+export const commentSectionStyles = (theme: Theme) => css`
   margin-top: ${theme.spacing.md};
   border-top: 1px solid ${theme.colors.border.light};
   padding-top: ${theme.spacing.md};
 `;
 
-export const commentsHeaderStyles = css`
+export const commentsHeaderStyles = (theme: Theme) => css`
   color: ${theme.colors.text.secondary};
   font-size: ${theme.typography.fontSize.sm};
   font-weight: ${theme.typography.fontWeight.medium};
@@ -208,7 +211,7 @@ export const commentsHeaderStyles = css`
   gap: ${theme.spacing.sm};
 `;
 
-export const toggleCommentsButtonStyles = css`
+export const toggleCommentsButtonStyles = (theme: Theme) => css`
   background: none;
   border: none;
   color: ${theme.colors.primary};
